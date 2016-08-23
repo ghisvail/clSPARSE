@@ -1,0 +1,21 @@
+From: Ghislain Antony Vaillant <ghisvail@gmail.com>
+Date: Tue, 23 Aug 2016 08:35:42 +0100
+Subject: Use system MathJax.
+
+---
+ docs/Doxyfile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/docs/Doxyfile b/docs/Doxyfile
+index 9b76fab..38f8c6f 100644
+--- a/docs/Doxyfile
++++ b/docs/Doxyfile
+@@ -1532,7 +1532,7 @@ MATHJAX_FORMAT         = HTML-CSS
+ # The default value is: http://cdn.mathjax.org/mathjax/latest.
+ # This tag requires that the tag USE_MATHJAX is set to YES.
+ 
+-MATHJAX_RELPATH        = http://cdn.mathjax.org/mathjax/latest
++MATHJAX_RELPATH        = /usr/share/javascript/mathjax
+ 
+ # The MATHJAX_EXTENSIONS tag can be used to specify one or more MathJax
+ # extension names that should be enabled during MathJax rendering. For example

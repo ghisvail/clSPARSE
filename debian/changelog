@@ -1,0 +1,5 @@
+clsparse (0.10.1.0-1) UNRELEASED; urgency=low
+
+  * Initial release. (Closes: #794552)
+
+ -- Ghislain Antony Vaillant <ghisvail@gmail.com>  Tue, 23 Aug 2016 08:18:44 +0100

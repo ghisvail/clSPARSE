@@ -1,0 +1,3 @@
+Use-system-MathJax.patch
+Disable-multilib-compiler-options.patch
+Move-OpenCL-detection-to-the-root-of-the-project.patch

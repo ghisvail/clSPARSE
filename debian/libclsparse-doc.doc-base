@@ -1,0 +1,9 @@
+Document: libclsparse-doc
+Title: API documentation for clSPARSE
+Author: Advanced Micro Devices, Inc.
+Abstract: This is the reference documentation for clSPARSE.
+Section: Programming
+
+Format: HTML
+Index: /usr/share/doc/libclsparse-doc/html/index.html
+Files: /usr/share/doc/libclsparse-doc/html/*.html

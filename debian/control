@@ -1,0 +1,70 @@
+Source: clsparse
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Uploaders: Ghislain Antony Vaillant <ghisvail@gmail.com>
+Section: libs
+Priority: optional
+Build-Depends: cmake (>= 3.0),
+               debhelper (>= 9),
+               ocl-icd-opencl-dev | opencl-dev 
+Build-Depends-Indep: doxygen
+Standards-Version: 3.9.8
+Vcs-Browser: https://anonscm.debian.org/cgit/debian-science/packages/clsparse.git
+Vcs-Git: https://anonscm.debian.org/git/debian-science/packages/clsparse.git
+Homepage: https://github.com/clMathLibraries/clSPARSE
+
+Package: libclsparse1
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Description: OpenCL library for sparse linear algebra
+ clSPARSE provides fundamental sparse operations for OpenCL, including:
+ .
+   * Sparse Matrix - dense Vector multiply (SpM-dV)
+   * Sparse Matrix - dense Matrix multiply (SpM-dM)
+   * Iterative conjugate gradient solver (CG)
+   * Iterative biconjugate gradient stabilized solver (BiCGStab)
+   * Dense to CSR conversions (& converse)
+   * COO to CSR conversions (& converse)
+   * Functions to read matrix market files in COO or CSR format
+ .
+ This package provides the shared library.
+
+Package: libclsparse-dev
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends: ${misc:Depends},
+         libclsparse1 (= ${binary:Version})
+Suggests: libclsparse-doc
+Description: development files for clSPARSE
+ clSPARSE provides fundamental sparse operations for OpenCL, including:
+ .
+   * Sparse Matrix - dense Vector multiply (SpM-dV)
+   * Sparse Matrix - dense Matrix multiply (SpM-dM)
+   * Iterative conjugate gradient solver (CG)
+   * Iterative biconjugate gradient stabilized solver (BiCGStab)
+   * Dense to CSR conversions (& converse)
+   * COO to CSR conversions (& converse)
+   * Functions to read matrix market files in COO or CSR format
+ .
+ This package provides the development files.
+
+Package: libclsparse-doc
+Architecture: all
+Multi-Arch: foreign
+Section: doc
+Depends: ${misc:Depends},
+         libjs-mathjax
+Description: documentation and examples for clSPARSE
+ clSPARSE provides fundamental sparse operations for OpenCL, including:
+ .
+   * Sparse Matrix - dense Vector multiply (SpM-dV)
+   * Sparse Matrix - dense Matrix multiply (SpM-dM)
+   * Iterative conjugate gradient solver (CG)
+   * Iterative biconjugate gradient stabilized solver (BiCGStab)
+   * Dense to CSR conversions (& converse)
+   * COO to CSR conversions (& converse)
+   * Functions to read matrix market files in COO or CSR format
+ .
+ This package provides the documentation and examples.

@@ -1,0 +1,28 @@
+From: Ghislain Antony Vaillant <ghisvail@gmail.com>
+Date: Tue, 23 Aug 2016 08:37:54 +0100
+Subject: Disable multilib compiler options.
+
+---
+ src/CMakeLists.txt | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index aebe3ac..66e7c11 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -141,11 +141,11 @@ elseif( CMAKE_COMPILER_IS_GNUCC )
+ 	message( STATUS "Detected GNU compiler collection" )
+ 
+ 	if( clSPARSE_BUILD64 )
+-		set( CMAKE_CXX_FLAGS "-m64 ${CMAKE_CXX_FLAGS}" )
+-		set( CMAKE_C_FLAGS "-m64 ${CMAKE_C_FLAGS}" )
++#		set( CMAKE_CXX_FLAGS "-m64 ${CMAKE_CXX_FLAGS}" )
++#		set( CMAKE_C_FLAGS "-m64 ${CMAKE_C_FLAGS}" )
+ 	else( )
+-		set( CMAKE_CXX_FLAGS "-m32 ${CMAKE_CXX_FLAGS}" )
+-		set( CMAKE_C_FLAGS "-m32 ${CMAKE_C_FLAGS}" )
++#		set( CMAKE_CXX_FLAGS "-m32 ${CMAKE_CXX_FLAGS}" )
++#		set( CMAKE_C_FLAGS "-m32 ${CMAKE_C_FLAGS}" )
+ 	endif( )
+ else( )
+ 	message( AUTHOR_WARNING "Compiler not recognized.  Using default flags." )

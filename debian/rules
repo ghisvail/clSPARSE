@@ -1,0 +1,35 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE = 1
+
+# Hardening options.
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+# Possible overlinkage with librt.
+# See: https://github.com/clMathLibraries/clSPARSE/issues/195
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+# Testing is disabled, as it relies on remote content.
+# See: https://github.com/clMathLibraries/clSPARSE/issues/194
+BUILD_OPTIONS = \
+	-DBUILD_BENCHMARKS=OFF \
+	-DBUILD_SHARED_LIBS=ON \
+	-DBUILD_TESTS=OFF \
+	-DSUFFIX_LIB="/$(DEB_TARGET_MULTIARCH)" \
+	-DUSE_SYSTEM_CL2HPP=ON
+
+%:
+	dh $@ --parallel --sourcedirectory=src
+
+override_dh_auto_configure-arch:
+	dh_auto_configure -- $(BUILD_OPTIONS)
+
+override_dh_auto_configure-indep:
+
+override_dh_auto_build-indep:
+	cd docs && doxygen Doxyfile
+
+override_dh_installdocs-indep:
+	dh_installdocs --indep
+	dh_doxygen --indep
